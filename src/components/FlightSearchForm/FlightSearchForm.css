@@ -1,0 +1,27 @@
+.flight-search-container{
+    padding: 24px;
+    border-radius: 16px;
+    max-width: 1300px;
+    margin: 20px auto;
+}
+
+
+.flight-info{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.location-info-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.date-picker-container{
+    display: flex;
+    margin-bottom: 8px;
+    gap: 10px;
+}

@@ -1,0 +1,7 @@
+.passenger-info-container{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}

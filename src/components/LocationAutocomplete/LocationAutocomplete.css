@@ -1,0 +1,8 @@
+.auto-complete-container{
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-width: 1px;
+    border-color: #9AA0A6;
+    border-radius: 5px;
+}
