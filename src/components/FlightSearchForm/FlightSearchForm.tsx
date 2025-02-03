@@ -148,7 +148,9 @@ export function FlightSearchForm () {
                     </Button>
                 </Box>
             </Paper>
-            <FlightList flights={flights} isLoading={isLoading} />
+            <div className="flight-list-container">
+                <FlightList flights={flights} isLoading={isLoading} />
+            </div>
         </div>
     );
 }

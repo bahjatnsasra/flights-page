@@ -1,0 +1,189 @@
+/* FlightTicketCard.css */
+.flight-ticket {
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    overflow: visible;
+}
+
+.flight-ticket:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.flight-ticket-main {
+    padding: 24px;
+    position: relative;
+}
+
+.flight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.airline-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.airline-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.price-section {
+    text-align: right;
+}
+
+.price {
+    font-weight: 600;
+}
+
+.flight-route {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    position: relative;
+}
+
+.route-point {
+    flex: 1;
+}
+
+.route-point.departure {
+    text-align: left;
+}
+
+.route-point.arrival {
+    text-align: right;
+}
+
+.time {
+    font-weight: 700;
+    color: #1a73e8;
+}
+
+.duration-indicator {
+    flex: 2;
+    text-align: center;
+    position: relative;
+    padding: 0 24px;
+}
+
+.flight-line {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    position: relative;
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background: #1a73e8;
+    position: relative;
+}
+
+.line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #1a73e8;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plane-icon {
+    color: #1a73e8;
+}
+
+.plane-icon.departure {
+    transform: rotate(-45deg);
+}
+
+.plane-icon.arrival {
+    transform: rotate(45deg);
+}
+
+.stops-chip {
+    margin-top: 8px;
+}
+
+.expand-button {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.expand-button.expanded {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.flight-details {
+    padding: 24px;
+    background: #f8f9fa;
+    border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.feature svg {
+    color: #1a73e8;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.tags-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.flight-tag {
+    text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+    .flight-route {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .route-point {
+        text-align: center;
+    }
+
+    .route-point.arrival {
+        text-align: center;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}

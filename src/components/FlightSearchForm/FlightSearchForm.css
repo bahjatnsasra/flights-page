@@ -25,3 +25,11 @@
     margin-bottom: 8px;
     gap: 10px;
 }
+
+
+
+.flight-list-container{
+    max-width: 800px;  
+    margin: 24px auto;
+    padding: 0 16px;
+}

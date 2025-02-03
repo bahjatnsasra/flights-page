@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { FlightTicketCard } from '../FlightTicket/FlightTicket';
 import { FlightTicket } from '../../services/types';
 
@@ -19,10 +19,10 @@ export const FlightList = ({ flights, isLoading }: FlightListProps) => {
     }
 
     return (
-        <Box sx={{ mt: 3 }}>
+        <Container maxWidth="md" sx={{ mt: 3 }}>
             {flights.map((flight) => (
                 <FlightTicketCard key={flight.id} flight={flight} />
             ))}
-        </Box>
+        </Container>
     );
 };
