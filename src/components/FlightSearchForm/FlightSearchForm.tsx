@@ -56,22 +56,6 @@ export function FlightSearchForm () {
         },[])
 
 
-        // useEffect(() => {
-        //     const fetchLocationAndAirports = async () => {
-        //         try {
-        //             const departureAirports = await searchAirports({query:  departureSearchQuery, countryCode: null})
-        //             setDepartureAirports(departureAirports)
-
-        //             const landingAirports = await searchAirports({query:  landingeSearchQuery, countryCode: null})
-        //             setLandingAirports(landingAirports)
-        //         } catch (error) {
-        //             console.error('Error:', error);
-        //         }
-                
-        //     }
-        //     fetchLocationAndAirports()
-            
-        // },[departureSearchQuery,landingeSearchQuery])
 
         useEffect(() => {
             const debounceTimeout = setTimeout(async () => {
@@ -109,10 +93,6 @@ export function FlightSearchForm () {
             return () => clearTimeout(debounceTimeout);
         }, [landingeSearchQuery]);
 
-        useEffect(()=> {
-            console.log(departureAirport,landingAirport);
-            
-        },[departureAirport,landingAirport])
 
         const handleSearch = async () => {
             if (!departureAirport || !landingAirport || !departureDate) return;
