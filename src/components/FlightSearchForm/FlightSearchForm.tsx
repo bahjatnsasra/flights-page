@@ -56,22 +56,58 @@ export function FlightSearchForm () {
         },[])
 
 
-        useEffect(() => {
-            const fetchLocationAndAirports = async () => {
-                try {
-                    const departureAirports = await searchAirports({query:  departureSearchQuery, countryCode: null})
-                    setDepartureAirports(departureAirports)
+        // useEffect(() => {
+        //     const fetchLocationAndAirports = async () => {
+        //         try {
+        //             const departureAirports = await searchAirports({query:  departureSearchQuery, countryCode: null})
+        //             setDepartureAirports(departureAirports)
 
-                    const landingAirports = await searchAirports({query:  landingeSearchQuery, countryCode: null})
-                    setLandingAirports(landingAirports)
+        //             const landingAirports = await searchAirports({query:  landingeSearchQuery, countryCode: null})
+        //             setLandingAirports(landingAirports)
+        //         } catch (error) {
+        //             console.error('Error:', error);
+        //         }
+                
+        //     }
+        //     fetchLocationAndAirports()
+            
+        // },[departureSearchQuery,landingeSearchQuery])
+
+        useEffect(() => {
+            const debounceTimeout = setTimeout(async () => {
+                try {
+                    if (departureSearchQuery) {
+                        console.log("departureSearchQuery");
+                        const departureAirports = await searchAirports({
+                            query: departureSearchQuery, 
+                            countryCode: null
+                        });
+                        setDepartureAirports(departureAirports);
+                    }
                 } catch (error) {
                     console.error('Error:', error);
                 }
-                
-            }
-            fetchLocationAndAirports()
-            
-        },[departureSearchQuery,landingeSearchQuery])
+            }, 2000);
+            return () => clearTimeout(debounceTimeout);
+        }, [departureSearchQuery]);
+        
+        useEffect(() => {
+            const debounceTimeout = setTimeout(async () => {
+                try {
+                    if (landingeSearchQuery) {
+                        console.log("landingeSearchQuery");
+                        const landingAirports = await searchAirports({
+                            query: landingeSearchQuery, 
+                            countryCode: null
+                        });
+                        setLandingAirports(landingAirports);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }, 2000);
+            return () => clearTimeout(debounceTimeout);
+        }, [landingeSearchQuery]);
 
         useEffect(()=> {
             console.log(departureAirport,landingAirport);
