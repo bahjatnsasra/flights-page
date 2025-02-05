@@ -2,14 +2,14 @@ import { PassengerInfo } from '../PassengerInfo/PassengerInfo';
 import { Select, MenuItem, InputAdornment,SelectChangeEvent } from '@mui/material';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import PersonIcon from '@mui/icons-material/Person';
-import { passengersMock } from '../../mock/mock_data'
+import * as mock from '../../mock/mock_data'
 import { useState } from 'react';
 import { IFlightInfoProps } from '../../services/types'
 
 
 export function FlightInfo (props: IFlightInfoProps) {
 
-        const [passengerData, setPassengerData] = useState(passengersMock);
+        const [passengerData, setPassengerData] = useState(mock.passengersMock);
 
         function countPassengers() {
             let counter = 0
@@ -67,7 +67,7 @@ export function FlightInfo (props: IFlightInfoProps) {
                         value={props.passengerCount}
                     >   
                     {
-                        passengersMock.map((p, key) => (
+                        passengerData.map((p, key) => (
                             <PassengerInfo
                                 key={key}
                                 label={p.label}
@@ -85,10 +85,11 @@ export function FlightInfo (props: IFlightInfoProps) {
                         value={props.tripClass}
                         onChange={handleTripClassChange}
                     >
-                        <MenuItem value="Economy">Economy</MenuItem>
-                        <MenuItem value="Premium Economy">Premium Econom</MenuItem>
-                        <MenuItem value="Business">Business</MenuItem>
-                        <MenuItem value="First">First</MenuItem>
+                        {
+                            mock.tripClass.map((c, key) => (
+                                <MenuItem value={c}>{c}</MenuItem>
+                            ))
+                        }
                     </Select>
                 </div>
     );

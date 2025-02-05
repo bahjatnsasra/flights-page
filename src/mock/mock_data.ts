@@ -23,3 +23,12 @@ export const passengersMock = [
         "count": 0
     }
 ]
+
+
+
+export const tripClass = [
+    "Economy",
+    "Premium Economy",
+    "Business",
+    "First"
+]

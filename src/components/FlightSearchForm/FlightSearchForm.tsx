@@ -79,7 +79,6 @@ export function FlightSearchForm () {
             const debounceTimeout = setTimeout(async () => {
                 try {
                     if (landingeSearchQuery) {
-                        console.log("landingeSearchQuery");
                         const landingAirports = await searchAirports({
                             query: landingeSearchQuery, 
                             countryCode: null
@@ -128,11 +127,6 @@ export function FlightSearchForm () {
                         airports={departureAirports}
                         setSearchQuery={setDepartureSearchQuery}
                     /> 
-                    <Tooltip title="switch locations">
-                        <IconButton>
-                            <CompareArrowsIcon/>
-                        </IconButton>
-                    </Tooltip>
                     <LocationAutocomplete
                         rightIcon={<PlaceIcon />}
                         placeholder="Where to?"
