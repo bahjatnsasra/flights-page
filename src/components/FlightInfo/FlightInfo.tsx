@@ -13,7 +13,7 @@ export function FlightInfo (props: IFlightInfoProps) {
 
         function countPassengers() {
             let counter = 0
-            passengerData.map((p) => {
+            passengerData.forEach((p) => {
                 counter = counter + p.count
             })
             props.setPassengerCount(counter)

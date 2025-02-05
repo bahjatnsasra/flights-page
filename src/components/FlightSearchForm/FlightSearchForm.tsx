@@ -1,4 +1,4 @@
-import { Box, IconButton, Paper, Tooltip } from '@mui/material';
+import { Box, Paper } from '@mui/material';
 
 import "./FlightSearchForm.css"
 import { FlightInfo } from '../FlightInfo/FlightInfo';
@@ -6,7 +6,6 @@ import LocationAutocomplete from '../LocationAutocomplete/LocationAutocomplete '
 import { useEffect, useState } from 'react';
 import PlaceIcon from '@mui/icons-material/Place';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
-import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { CustomDatePicker } from '../DatePicker/DatePicker';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
